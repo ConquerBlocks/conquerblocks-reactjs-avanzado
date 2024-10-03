@@ -1,29 +1,40 @@
+export enum Status {
+  Alive = 'Alive',
+  Dead = 'Dead',
+  Unknown = 'unknown'
+}
+
+export enum Gender {
+  Female = 'Female',
+  Male = 'Male',
+  Genderless = 'Genderless',
+  Unknown = 'unknown'
+}
+
+export type Origin = {
+  name: string;
+  url: string;
+}
+
+export type Location = {
+  name: string;
+  url: string;
+}
+
 export interface Character {
   id: number;
   name: string;
-  status: 'Alive' | 'Dead' | 'unknown';
+  status: Status;
   species: string;
   type: string;
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
-
-  origin: {
-
-    name: string;
-    url: string;
-  };
-  location: {
-    name: string;
-
-    url: string;
-  };
+  gender: Gender;
+  origin: Origin;
+  location: Location;
   image: string;
-
   episode: string[];
-
   url: string;
   created: string;
 }
-
 // src/models/Character.ts (continuación)
 
 const characters: Character[] = [];
